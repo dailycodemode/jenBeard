@@ -16,14 +16,18 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = { sentences: [
-                            "Pff, might as well learn Cornish if you're looking to waste your time",
-                            "Nope. And real answers only please",
-                            // "Absolutely not. I wouldn't iterate my way out of this for loop with that garbage",
-                            // "Wrong. Terrible guess",
-                            // "Garbage. Just garbage",
-                            // "Famously broken. An antipattern compiled failure of nonsense",
-                            // "My word. Do people still use that?"
-                            ,"Yeah!!! You got it...... No of course you didn't"],
+                            "Might as well learn Gan if you're looking to waste your time",
+                            "Real answers only please",
+                            "Whitespace would be of more use",
+                            "I wouldn't iterate my way out of this amazing website with that garbage",
+                            "Wrong. Waste of time. Terrible guess",
+                            "Garbage. Just garbage",
+                            "Famously broken. An antipattern compiled failure of nonsense",
+                            "My word. Do people still use that?",
+                            "const string answer = 'Awful chocie';    // Now change my mind",
+                            "SELECT * FROM TBL_POINTLESS_LANGUAGES LIMIT 1",
+                            "Well aren't you great for choosing that. There truly is someone for everyone",
+                            "Yeah!!! You got it...... No of course you didn't"],
                         line: "" ,
                         language: ""};
         this.handleClick=this.handleClick.bind(this);
@@ -52,13 +56,18 @@ class Main extends Component {
     }
     render() {
         const renderImg = ()=>{
-            if(typeof this.state.line == "undefined"){
-                console.log(this.state.line);
+            // if(typeof this.state.line == "undefined"){
+              if(this.state.language.toUpperCase()=="VBA"){
+                // console.log(this.state.line);
               return <div>
                   <h1 className = "bingo">Bingo</h1>
-                  <img className = "img" src={bitsize} alt="Logo" /> 
+                  <img className = "img1" src={bitsize} alt="Logo" /> 
+                  <img className = "img2" src={bitsize} alt="Logo" /> 
+                  <img className = "img3" src={bitsize} alt="Logo" /> 
+                  <img className = "img4" src={bitsize} alt="Logo" /> 
                   </div>
             } else{
+
                 return (
                     <div>
                     <h2>Since Jen and Beardo got married. One questions remains unanswered.</h2>
@@ -71,8 +80,9 @@ class Main extends Component {
                     <button className="myButton" onClick={this.handleClick}>Click to ascertain your brilliance</button>
                     <img></img>
                     <br/>
-                    <h3>{this.state.line}</h3>
-                    </div>
+                    {typeof this.state.line == "undefined"? <p>hint: excel and access are pretty cool eh?</p> : <h3>{this.state.line}</h3>}
+                   </div>
+
                 )
             }
           }
